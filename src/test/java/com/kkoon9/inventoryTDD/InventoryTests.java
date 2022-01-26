@@ -1,6 +1,6 @@
 package com.kkoon9.inventoryTDD;
 
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -15,9 +15,9 @@ public class InventoryTests {
         inventory.setWidth(new BigDecimal(10));
         inventory.setHeight(new BigDecimal(10));
 
-        Assertions.assertEquals(new BigDecimal(10), inventory.getLength());
-        Assertions.assertEquals(new BigDecimal(10), inventory.getWidth());
-        Assertions.assertEquals(new BigDecimal(10), inventory.getHeight());
+        Assertions.assertThat(new BigDecimal(10)).isEqualTo(inventory.getLength());
+        Assertions.assertThat(new BigDecimal(10)).isEqualTo(inventory.getWidth());
+        Assertions.assertThat(new BigDecimal(10)).isEqualTo(inventory.getHeight());
     }
 
     @Test
@@ -26,7 +26,7 @@ public class InventoryTests {
 
         inventory.setType(EnumType.Temperature.AMBIENT);
 
-        Assertions.assertEquals(EnumType.Temperature.AMBIENT, inventory.getType());
+        Assertions.assertThat(EnumType.Temperature.AMBIENT).isEqualTo(inventory.getType());
     }
 
     @Test
@@ -35,7 +35,7 @@ public class InventoryTests {
 
         inventory.setCapacity(10);
 
-        Assertions.assertEquals(10, inventory.getCapacity());
+        Assertions.assertThat(10).isEqualTo(inventory.getCapacity());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class InventoryTests {
 
         inventory.setCurrent(10);
 
-        Assertions.assertEquals(10, inventory.getCurrent());
+        Assertions.assertThat(10).isEqualTo(inventory.getCurrent());
     }
 
     @Test
@@ -53,7 +53,7 @@ public class InventoryTests {
         inventory.setCapacity(5);
         inventory.setCurrent(10);
 
-        Assertions.assertEquals(false, inventory.isAbleCurrentCount());
+        Assertions.assertThat(false).isEqualTo(inventory.isAbleCurrentCount());
     }
 
     @Test
@@ -62,6 +62,6 @@ public class InventoryTests {
         inventory.setCapacity(10);
         inventory.setCurrent(5);
 
-        Assertions.assertEquals(5, inventory.usableCapacity());
+        Assertions.assertThat(5).isEqualTo(inventory.usableCapacity());
     }
 }
