@@ -1,6 +1,6 @@
 package com.kkoon9.inventoryTDD;
 
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class SimpleTest {
@@ -19,7 +19,7 @@ public class SimpleTest {
         int result = fibonacci(num);
 
         // 0 -> 0
-        Assertions.assertEquals(0, result);
+        Assertions.assertThat(0).isEqualTo(result);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class SimpleTest {
         int result = fibonacci(num);
 
         // 1 -> 1
-        Assertions.assertEquals(1, result);
+        Assertions.assertThat(1).isEqualTo(result);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class SimpleTest {
         int result = fibonacci(num);
 
         // 2 -> 1
-        Assertions.assertEquals(1, result);
+        Assertions.assertThat(1).isEqualTo(result);
     }
     @Test
     void testFibonacci_3() {
@@ -45,7 +45,7 @@ public class SimpleTest {
         int result = fibonacci(num);
 
         // 3 -> 2
-        Assertions.assertEquals(2, result);
+        Assertions.assertThat(2).isEqualTo(result);
     }
 
 }
